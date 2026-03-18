@@ -1,0 +1,46 @@
+export const PRICING_TIERS = [
+  {
+    id: 'starter',
+    name: 'Starter',
+    price: '$49',
+    priceNote: 'per cut',
+    isHighlighted: false,
+    features: [
+      'Lawn mowing',
+      'Edge trimming',
+      'Clipping cleanup',
+      'Single visit or recurring',
+    ],
+    ctaText: 'Book a Cut',
+  },
+  {
+    id: 'maintenance',
+    name: 'Maintenance',
+    price: '$129',
+    priceNote: 'per month',
+    isHighlighted: true,
+    features: [
+      'Weekly mowing & edging',
+      'Seasonal fertilization',
+      'Broadleaf weed control',
+      'Priority scheduling',
+      'Free service calls',
+    ],
+    ctaText: 'Get Started',
+  },
+  {
+    id: 'total-care',
+    name: 'Total Care',
+    price: 'Custom',
+    priceNote: 'quote',
+    isHighlighted: false,
+    features: [
+      'Everything in Maintenance',
+      'Core aeration',
+      'Spring & fall cleanup',
+      'Hedge & shrub trimming',
+      'Dedicated account manager',
+    ],
+    ctaText: 'Request Quote',
+  },
+]

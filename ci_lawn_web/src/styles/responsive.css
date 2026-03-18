@@ -1,0 +1,445 @@
+/* ============================================================
+   CI Lawn – Responsive Styles
+   Breakpoints (Bootstrap 5):
+     xs  < 576px   (mobile portrait)
+     sm  ≥ 576px   (mobile landscape / large phone)
+     md  ≥ 768px   (tablet)
+     lg  ≥ 992px   (desktop)
+   ============================================================ */
+
+/* ── GLOBAL ────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  :root {
+    --section-py: 3.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.97rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  :root {
+    --section-py: 3rem;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+}
+
+/* ── NAVBAR ─────────────────────────────────────────────────── */
+
+/* Ensure the navbar always has a bg on mobile/tablet */
+@media (max-width: 991.98px) {
+  .navbar-cilawn {
+    background-color: var(--color-primary-dark) !important;
+    padding: 0.75rem 0;
+  }
+
+  /* Mobile collapse menu: full-width dropdown with bg */
+  .navbar-cilawn .navbar-collapse {
+    background-color: var(--color-primary-dark);
+    border-radius: 0 0 0.75rem 0.75rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem 1rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Stack nav links vertically */
+  .navbar-cilawn .navbar-nav {
+    gap: 0 !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-cilawn .nav-link {
+    padding: 0.65rem 0.75rem !important;
+    border-radius: 0.5rem;
+  }
+
+  /* Right group: row layout, separated by border */
+  .navbar-right-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 0.75rem;
+    margin-top: 0.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    width: 100%;
+  }
+
+  .navbar-right-group .navbar-phone {
+    flex: 1;
+  }
+
+  .navbar-right-group .btn-quote {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+/* ── HERO ────────────────────────────────────────────────────── */
+
+/* Disable parallax on mobile (iOS doesn't support background-attachment: fixed) */
+@media (max-width: 991.98px) {
+  .hero-section {
+    background-attachment: scroll;
+    min-height: 100svh;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    min-height: 100svh;
+    align-items: flex-end;   /* push content up from bottom wave */
+    padding-bottom: 5rem;
+  }
+
+  .hero-content {
+    padding-top: 7rem;       /* clear fixed navbar */
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .hero-trust-row {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .trust-badge {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-title {
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+  }
+
+  .hero-trust-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+}
+
+/* ── SERVICES ────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .service-card {
+    border-radius: 0.85rem;
+  }
+
+  .service-icon-circle {
+    width: 56px;
+    height: 56px;
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ── WHY CHOOSE US ───────────────────────────────────────────── */
+@media (max-width: 991.98px) {
+  .why-image-wrap img {
+    height: 360px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Stack image below text on mobile */
+  .why-section .row {
+    flex-direction: column-reverse;
+  }
+
+  .why-image-wrap img {
+    height: 260px;
+  }
+
+  .why-image-wrap {
+    border-radius: 1rem;
+  }
+
+  .benefit-item {
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* ── PRICING ─────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  /* Remove scale transform to prevent overflow on stacked cards */
+  .pricing-card.highlighted {
+    transform: none;
+    margin-top: 0;
+  }
+
+  .pricing-card.highlighted:hover {
+    transform: translateY(-6px);
+  }
+
+  .pricing-card {
+    padding: 1.8rem 1.5rem;
+  }
+}
+
+/* ── TESTIMONIALS ────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .trust-bar {
+    padding: 1rem 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .trust-bar-item {
+    font-size: 0.85rem;
+  }
+
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .trust-bar {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .trust-bar-item {
+    justify-content: center;
+  }
+}
+
+/* ── SERVICE AREA ────────────────────────────────────────────── */
+@media (max-width: 991.98px) {
+  .map-placeholder {
+    height: 300px;
+  }
+
+  .map-placeholder iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .map-placeholder {
+    height: 260px;
+    margin-top: 1.5rem;
+  }
+
+  .map-placeholder iframe {
+    height: 260px;
+  }
+
+  .area-tag {
+    font-size: 0.82rem;
+    padding: 0.28rem 0.75rem;
+  }
+}
+
+/* ── CONTACT FORM ────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .contact-form-card {
+    padding: 1.8rem 1.4rem;
+    border-radius: 1.25rem;
+  }
+
+  /* Show contact info inline at top on mobile instead of left column */
+  .contact-info-item {
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .contact-form-card {
+    padding: 1.4rem 1rem;
+  }
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .footer {
+    padding-top: 3rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem !important;
+    margin-top: 2rem;
+  }
+
+  .social-icons {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* 2-column footer on small mobile (col-6) */
+  .footer .col-lg-3,
+  .footer .col-lg-2,
+  .footer .col-lg-4 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ── SERVICES PAGE ───────────────────────────────────────────── */
+
+/* Desktop: alternating layout via CSS class (no inline style) */
+@media (min-width: 992px) {
+  .service-detail-row--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Service detail image wrapper */
+.service-detail-image-wrap {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  height: 320px;
+}
+
+.service-detail-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 991.98px) {
+  .service-detail-image-wrap {
+    height: 260px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Stack: image always below text on mobile */
+  .service-detail-row {
+    flex-direction: column !important;
+  }
+
+  .service-detail-image-wrap {
+    height: 220px;
+    margin-top: 0.5rem;
+  }
+
+  .service-detail-row.mb-5 {
+    margin-bottom: 3rem !important;
+  }
+  .service-detail-row.pb-5 {
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* ── ABOUT PAGE ──────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .about-stats-col {
+    padding: 1rem 0;
+  }
+}
+
+/* ── TABLET (md: 768px – 991px) specific tweaks ─────────────── */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-content {
+    padding-top: 8rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .why-image-wrap img {
+    height: 400px;
+  }
+
+  .contact-form-card {
+    padding: 2rem 1.8rem;
+  }
+
+  .trust-bar {
+    gap: 1.8rem;
+  }
+}
+
+/* ── PAGE HEADERS (Services / About) ────────────────────────── */
+@media (max-width: 767.98px) {
+  /* Reduce hero padding on sub-pages */
+  main[style*="paddingTop: '5rem'"] > section:first-child,
+  main > section:first-child {
+    padding-top: 4rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .display-5 {
+    font-size: clamp(1.7rem, 6vw, 2.2rem) !important;
+  }
+}
+
+/* ── CONTACT PAGE ────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  /* On mobile: contact info stacks above form */
+  .section-contact .row {
+    flex-direction: column;
+  }
+}
+
+/* ── FOOTER BOTTOM BAR ───────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
+}
+
+/* ── TOUCH DEVICE: remove hover transforms ───────────────────── */
+@media (hover: none) {
+  .service-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .pricing-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .pricing-card.highlighted:hover {
+    transform: none;
+  }
+
+  .testimonial-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn-hero-primary:hover,
+  .btn-hero-secondary:hover {
+    transform: none;
+  }
+}
