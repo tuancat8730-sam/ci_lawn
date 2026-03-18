@@ -8,8 +8,8 @@ set -e
 
 export PATH=$HOME/google-cloud-sdk/bin:$PATH
 
-BUCKET_NAME=${1:-"ci-lawn-website"}
-PROJECT_ID=${2:-""}
+BUCKET_NAME=${1:-"ci_lawn"}
+PROJECT_ID=${2:-"ci-project-489202"}
 
 echo ""
 echo "=========================================="
