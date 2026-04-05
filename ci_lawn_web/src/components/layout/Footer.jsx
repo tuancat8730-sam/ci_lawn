@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaFacebook, FaInstagram, FaGoogle } from 'react-icons/fa'
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
 
 const SERVICE_LINKS = [
   'Lawn Mowing & Maintenance',
@@ -45,18 +45,13 @@ export default function Footer() {
           {/* Col 1: Brand */}
           <div className="col-lg-3 col-md-6">
             <Link to="/" className="footer-brand d-flex align-items-center gap-2">
-              <img src="/images/logo3.PNG" alt="Capital Lawn Care" style={{ height: 36, width: 'auto', objectFit: 'contain' }} />
+              <img src="/images/logo3.png" alt="Capital Lawn Care" style={{ height: 36, width: 'auto', objectFit: 'contain' }} />
               <span>Capital <span>Lawn Care</span></span>
             </Link>
             <p className="footer-tagline">
               Professional lawn care services that keep your outdoor spaces beautiful,
               healthy, and thriving — all year long.
             </p>
-            <div className="social-icons">
-              <a href="#" className="social-icon" aria-label="Facebook"><FaFacebook /></a>
-              <a href="#" className="social-icon" aria-label="Instagram"><FaInstagram /></a>
-              <a href="#" className="social-icon" aria-label="Google"><FaGoogle /></a>
-            </div>
           </div>
 
           {/* Col 2: Services */}

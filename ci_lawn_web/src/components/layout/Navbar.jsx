@@ -49,7 +49,7 @@ export default function Navbar() {
           {/* Brand */}
           <Link to="/" className="navbar-brand d-flex align-items-center gap-2">
             <img
-              src="/images/logo3.PNG"
+              src="/images/logo3.png"
               alt="Capital Lawn Care"
               style={{ height: 36, width: 'auto', objectFit: 'contain' }}
             />

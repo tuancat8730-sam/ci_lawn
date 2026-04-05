@@ -19,10 +19,12 @@ function PricingCard({ tier }) {
           </span>
         )}
         {tier.price}
-        {tier.price !== 'Custom' && <span>/{tier.priceNote}</span>}
+        {tier.priceNote && <span>/{tier.priceNote}</span>}
       </div>
-      {tier.price === 'Custom' && <p className="pricing-note">Tailored to your property</p>}
-      {tier.price !== 'Custom' && <p className="pricing-note">No hidden fees</p>}
+      {tier.priceNote
+        ? <p className="pricing-note">Starting at</p>
+        : <p className="pricing-note">No hidden fees</p>
+      }
 
       <ul className="pricing-features">
         {tier.features.map((f) => (
