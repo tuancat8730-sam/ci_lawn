@@ -45,7 +45,7 @@ export default function Footer() {
           {/* Col 1: Brand */}
           <div className="col-lg-3 col-md-6">
             <Link to="/" className="footer-brand d-flex align-items-center gap-2">
-              <img src="/images/logo3.png" alt="Capital Lawn Care" style={{ height: 36, width: 'auto', objectFit: 'contain' }} />
+              <img src="./images/logo3.png" alt="Capital Lawn Care" style={{ height: 36, width: 'auto', objectFit: 'contain' }} />
               <span>Capital <span>Lawn Care</span></span>
             </Link>
             <p className="footer-tagline">
