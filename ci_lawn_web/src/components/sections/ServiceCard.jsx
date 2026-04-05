@@ -11,14 +11,22 @@ const ICONS = {
   'snow-removal': <FaSnowflake />,
 }
 
-export default function ServiceCard({ service, delay = 0 }) {
+export default function ServiceCard({ service }) {
   const icon = ICONS[service.id] || <FaGripLines />
 
   return (
     <div className="col">
       <div className="card service-card h-100">
+        {service.image && (
+          <div className="service-card-img-wrap">
+            <img src={service.image} alt={service.title} className="service-card-img" />
+            {service.badge && (
+              <span className="service-badge service-badge--img">{service.badge}</span>
+            )}
+          </div>
+        )}
         <div className="card-body p-4">
-          {service.badge && (
+          {!service.image && service.badge && (
             <span className="service-badge">{service.badge}</span>
           )}
           <div className="service-icon-circle">

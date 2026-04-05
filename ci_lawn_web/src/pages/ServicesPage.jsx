@@ -1,7 +1,6 @@
-import { FaGripLines, FaSeedling, FaWater, FaBroom, FaCut, FaSnowflake, FaCheck, FaArrowRight } from 'react-icons/fa'
+import { FaSeedling, FaWater, FaBroom, FaCut, FaSnowflake, FaCheck, FaArrowRight } from 'react-icons/fa'
 import { GiGrass } from 'react-icons/gi'
 import { SERVICES } from '../data/services'
-import SectionHeader from '../components/ui/SectionHeader'
 import ScrollReveal from '../components/ui/ScrollReveal'
 
 const ICONS = {
@@ -54,10 +53,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="col-lg-6 service-detail-image-col">
                   <div className="service-detail-image-wrap">
-                    <img
-                      src={`https://images.unsplash.com/photo-${['1558618666-fcd25c85cd64', '1416879595882-3373a0480b5b', '1574323347407-f5e1ad6d020b', '1591840843553-2f2e0756f70c', '1599047777830-27dd11c4d8bf', '1542626991-cbc4e32524cc'][i]}?w=800&q=80`}
-                      alt={s.title}
-                    />
+                    <img src={s.image} alt={s.title} />
                   </div>
                 </div>
               </div>

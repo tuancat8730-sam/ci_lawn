@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import { FaCheck, FaArrowRight } from 'react-icons/fa'
 import { PRICING_TIERS } from '../../data/pricing'
 import SectionHeader from '../ui/SectionHeader'
@@ -46,6 +47,23 @@ function PricingCard({ tier }) {
 }
 
 export default function Pricing() {
+  const sliderRef = useRef(null)
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  const handleScroll = () => {
+    const el = sliderRef.current
+    if (!el) return
+    const idx = Math.round(el.scrollLeft / el.clientWidth)
+    setActiveSlide(idx)
+  }
+
+  const goToSlide = (i) => {
+    const el = sliderRef.current
+    if (!el) return
+    el.scrollTo({ left: i * el.clientWidth, behavior: 'smooth' })
+    setActiveSlide(i)
+  }
+
   return (
     <section id="pricing" className="section-pricing">
       <div className="container-xl">
@@ -57,7 +75,8 @@ export default function Pricing() {
           />
         </ScrollReveal>
 
-        <div className="row row-cols-1 row-cols-md-3 g-4 align-items-center">
+        {/* Desktop: 3-column grid */}
+        <div className="row row-cols-1 row-cols-md-3 g-4 align-items-center d-none d-md-flex">
           {PRICING_TIERS.map((tier, i) => (
             <ScrollReveal key={tier.id} delay={i + 1}>
               <div className="h-100">
@@ -65,6 +84,33 @@ export default function Pricing() {
               </div>
             </ScrollReveal>
           ))}
+        </div>
+
+        {/* Mobile: scroll-snap slider */}
+        <div className="pricing-slider-wrap d-md-none">
+          <div
+            className="pricing-slider"
+            ref={sliderRef}
+            onScroll={handleScroll}
+          >
+            {PRICING_TIERS.map((tier) => (
+              <div className="pricing-slide" key={tier.id}>
+                <PricingCard tier={tier} />
+              </div>
+            ))}
+          </div>
+
+          {/* Dot indicators */}
+          <div className="pricing-dots">
+            {PRICING_TIERS.map((_, i) => (
+              <button
+                key={i}
+                className={`pricing-dot${i === activeSlide ? ' pricing-dot--active' : ''}`}
+                onClick={() => goToSlide(i)}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         <ScrollReveal>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { FaCloudRain, FaBagShopping, FaCreditCard, FaChevronDown } from 'react-icons/fa6'
 import { FaSearchPlus } from 'react-icons/fa'
 import SectionHeader from '../ui/SectionHeader'
@@ -33,8 +33,24 @@ const FAQS = [
 
 export default function GalleryFAQ() {
   const [openIndex, setOpenIndex] = useState(null)
+  const sliderRef = useRef(null)
+  const [activeSlide, setActiveSlide] = useState(0)
 
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i)
+
+  const handleScroll = () => {
+    const el = sliderRef.current
+    if (!el) return
+    const idx = Math.round(el.scrollLeft / el.clientWidth)
+    setActiveSlide(idx)
+  }
+
+  const goToSlide = (i) => {
+    const el = sliderRef.current
+    if (!el) return
+    el.scrollTo({ left: i * el.clientWidth, behavior: 'smooth' })
+    setActiveSlide(i)
+  }
 
   return (
     <section className="section-gallery-faq">
@@ -49,7 +65,8 @@ export default function GalleryFAQ() {
           />
         </ScrollReveal>
 
-        <div className="gallery-grid mb-5">
+        {/* Desktop: grid */}
+        <div className="gallery-grid mb-5 d-none d-md-grid">
           {IMAGES.map((img, i) => (
             <ScrollReveal key={i} delay={Math.min(i + 1, 5)}>
               <div className="gallery-item">
@@ -63,6 +80,32 @@ export default function GalleryFAQ() {
               </div>
             </ScrollReveal>
           ))}
+        </div>
+
+        {/* Mobile: slider */}
+        <div className="gallery-slider-wrap d-md-none mb-5">
+          <div className="gallery-slider" ref={sliderRef} onScroll={handleScroll}>
+            {IMAGES.map((img, i) => (
+              <div className="gallery-slide" key={i}>
+                <img src={img.src} alt={img.alt} />
+                <div className="gallery-slide-label">
+                  <FaSearchPlus size={13} />
+                  <span>{img.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="pricing-dots">
+            {IMAGES.map((_, i) => (
+              <button
+                key={i}
+                className={`pricing-dot${i === activeSlide ? ' pricing-dot--active' : ''}`}
+                onClick={() => goToSlide(i)}
+                aria-label={`Go to image ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* FAQ */}
