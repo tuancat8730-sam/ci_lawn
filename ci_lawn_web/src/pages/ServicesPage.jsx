@@ -15,7 +15,7 @@ const ICONS = {
 
 export default function ServicesPage() {
   return (
-    <main style={{ paddingTop: '5rem' }}>
+    <main style={{ paddingTop: '7.5rem' }}>
       {/* Header */}
       <section style={{ background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))', padding: '5rem 0' }}>
         <div className="container-xl text-center text-white">

@@ -51,9 +51,9 @@ export default function WhyChooseUs() {
           <div className="col-lg-7">
             <ScrollReveal direction="right">
               <SectionHeader
-                label="Why CI Lawn"
+                label="Why Capital Lawn Care"
                 title="We Care About Your Lawn As Much As You Do"
-                subtitle="Over 500 satisfied customers trust us with their most prized outdoor space."
+                subtitle="Serving Edmonton since 2020 — 100+ satisfied customers trust us with their outdoor spaces."
                 center={false}
               />
             </ScrollReveal>

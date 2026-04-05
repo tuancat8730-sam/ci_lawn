@@ -4,13 +4,13 @@ import SectionHeader from '../ui/SectionHeader'
 import ScrollReveal from '../ui/ScrollReveal'
 
 const SERVICES_LIST = [
-  'Lawn Mowing & Maintenance',
+  'Lawn Mowing',
   'Fertilization & Weed Control',
-  'Core Aeration',
-  'Spring / Fall Cleanup',
+  'Aeration & Overseeding',
   'Hedge & Shrub Trimming',
-  'Snow Removal',
-  'Multiple Services',
+  'Leaf Cleanup',
+  'Seasonal Maintenance',
+  'Other / Multiple Services',
 ]
 
 const PROPERTY_SIZES = [
@@ -21,10 +21,10 @@ const PROPERTY_SIZES = [
 ]
 
 const CONTACT_INFO = [
-  { icon: <FaPhone />, title: 'Phone', value: '(780) 000-0000' },
-  { icon: <FaEnvelope />, title: 'Email', value: 'info@cilawn.ca' },
-  { icon: <FaMapMarkerAlt />, title: 'Location', value: 'Edmonton, Alberta, Canada' },
-  { icon: <FaClock />, title: 'Hours', value: 'Mon–Fri 7am–7pm · Sat 8am–5pm · Sun Closed' },
+  { icon: <FaPhone />, title: 'Phone', value: '780-989-3987', href: 'tel:7809893987' },
+  { icon: <FaEnvelope />, title: 'Email', value: 'lawncare@capitalirrigation.com', href: 'mailto:lawncare@capitalirrigation.com' },
+  { icon: <FaMapMarkerAlt />, title: 'Location', value: '4505 97 St NW, Edmonton, AB T6E 5Y8', href: null },
+  { icon: <FaClock />, title: 'Hours', value: 'Monday – Friday: 9am – 4pm', href: null },
 ]
 
 export default function ContactForm() {
@@ -65,7 +65,7 @@ export default function ContactForm() {
           <SectionHeader
             label="Get in Touch"
             title="Request Your Free Estimate"
-            subtitle="Fill out the form below and we'll get back to you within 24 hours."
+            subtitle="Ready for a greener lawn? Reach out today and we'll get back to you within 24 hours."
             light
           />
         </ScrollReveal>
@@ -79,10 +79,30 @@ export default function ContactForm() {
                   <div className="contact-icon">{item.icon}</div>
                   <div>
                     <p className="contact-info-title">{item.title}</p>
-                    <p className="contact-info-value">{item.value}</p>
+                    {item.href ? (
+                      <a href={item.href} className="contact-info-value" style={{ color: 'inherit', textDecoration: 'none' }}>
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="contact-info-value">{item.value}</p>
+                    )}
                   </div>
                 </div>
               ))}
+
+              {/* Map embed */}
+              <div style={{ marginTop: '1.5rem', borderRadius: '0.75rem', overflow: 'hidden' }}>
+                <iframe
+                  title="Capital Lawn Care Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.7!2d-113.4955!3d53.4903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a0224a8b5f1b3d%3A0x1!2s4505+97+St+NW%2C+Edmonton%2C+AB+T6E+5Y8!5e0!3m2!1sen!2sca!4v1"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0, display: 'block' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </ScrollReveal>
           </div>
 
@@ -163,13 +183,13 @@ export default function ContactForm() {
                         <label className="form-label">Additional Notes</label>
                         <textarea
                           name="notes" className="form-control" rows="3"
-                          placeholder="Any specific requests or details about your property..."
+                          placeholder="Tell us about your lawn, property size, or any specific concerns…"
                           value={form.notes} onChange={handleChange}
                         />
                       </div>
                       <div className="col-12">
                         <button type="submit" className="btn-submit btn">
-                          Request My Free Estimate <FaArrowRight style={{ marginLeft: 6 }} />
+                          Send My Free Quote Request <FaArrowRight style={{ marginLeft: 6 }} />
                         </button>
                       </div>
                     </div>

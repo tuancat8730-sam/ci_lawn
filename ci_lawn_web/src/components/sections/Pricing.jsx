@@ -2,7 +2,6 @@ import { FaCheck, FaArrowRight } from 'react-icons/fa'
 import { PRICING_TIERS } from '../../data/pricing'
 import SectionHeader from '../ui/SectionHeader'
 import ScrollReveal from '../ui/ScrollReveal'
-import { Link } from 'react-router-dom'
 
 function PricingCard({ tier }) {
   const scrollToContact = () => {
@@ -14,11 +13,16 @@ function PricingCard({ tier }) {
       {tier.isHighlighted && <span className="popular-badge">Most Popular</span>}
       <p className="pricing-name">{tier.name}</p>
       <div className="pricing-price">
+        {tier.originalPrice && (
+          <span style={{ textDecoration: 'line-through', fontSize: '1rem', color: 'var(--color-gray-text)', marginRight: '0.4rem', fontWeight: 500 }}>
+            {tier.originalPrice}
+          </span>
+        )}
         {tier.price}
         {tier.price !== 'Custom' && <span>/{tier.priceNote}</span>}
       </div>
       {tier.price === 'Custom' && <p className="pricing-note">Tailored to your property</p>}
-      {tier.price !== 'Custom' && <p className="pricing-note">Starting from</p>}
+      {tier.price !== 'Custom' && <p className="pricing-note">No hidden fees</p>}
 
       <ul className="pricing-features">
         {tier.features.map((f) => (

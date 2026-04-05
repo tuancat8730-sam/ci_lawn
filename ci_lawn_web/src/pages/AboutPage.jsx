@@ -1,22 +1,22 @@
-import { FaLeaf, FaUsers, FaStar, FaShieldAlt } from 'react-icons/fa'
+import { FaUsers, FaStar, FaLeaf, FaShieldAlt } from 'react-icons/fa'
 import SectionHeader from '../components/ui/SectionHeader'
 import ScrollReveal from '../components/ui/ScrollReveal'
 
 const STATS = [
-  { icon: <FaUsers />, value: '500+', label: 'Happy Customers' },
+  { icon: <FaUsers />, value: '100+', label: 'Happy Clients' },
   { icon: <FaStar />, value: '5★', label: 'Average Rating' },
-  { icon: <FaLeaf />, value: '5+', label: 'Years Experience' },
-  { icon: <FaShieldAlt />, value: '100%', label: 'Fully Insured' },
+  { icon: <FaLeaf />, value: '10+', label: 'Years Experience' },
+  { icon: <FaShieldAlt />, value: '100%', label: 'Insured & Licensed' },
 ]
 
 export default function AboutPage() {
   return (
-    <main style={{ paddingTop: '5rem' }}>
+    <main style={{ paddingTop: '7.5rem' }}>
       {/* Hero */}
       <section style={{ background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))', padding: '5rem 0' }}>
         <div className="container-xl text-center text-white">
           <span className="section-label" style={{ color: 'var(--color-accent)' }}>Our Story</span>
-          <h1 className="display-5 fw-bold">About CI Lawn</h1>
+          <h1 className="display-5 fw-bold">About Capital Lawn Care</h1>
           <p className="lead" style={{ color: 'rgba(255,255,255,0.8)', maxWidth: 540, margin: '0 auto' }}>
             Edmonton's trusted lawn care team — built on hard work, honesty, and a genuine love for great-looking lawns.
           </p>
@@ -32,7 +32,7 @@ export default function AboutPage() {
                 <div style={{ borderRadius: '1.5rem', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
                   <img
                     src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80"
-                    alt="CI Lawn team"
+                    alt="Capital Lawn Care team"
                     style={{ width: '100%', height: 420, objectFit: 'cover' }}
                   />
                 </div>
@@ -46,11 +46,24 @@ export default function AboutPage() {
                   center={false}
                 />
                 <p style={{ color: 'var(--color-gray-text)', lineHeight: 1.75 }}>
-                  CI Lawn was founded right here in Edmonton with one simple goal: to give homeowners back their weekends while keeping their lawns looking their absolute best. We started small — a truck, some equipment, and a commitment to doing right by every customer.
+                  Capital Lawn Care is a full-service lawn care company serving the Edmonton area since 2020. We started with one simple goal: to give homeowners back their weekends while keeping their lawns looking their absolute best — with employees who care and customers who are satisfied.
                 </p>
                 <p style={{ color: 'var(--color-gray-text)', lineHeight: 1.75, marginTop: '1rem' }}>
-                  Today, we're proud to serve hundreds of properties across the greater Edmonton area. Our team of certified lawn care professionals brings expertise, eco-conscious practices, and genuine care to every job.
+                  Today, we're proud to serve hundreds of properties across the greater Edmonton area. Our certified lawn care professionals bring expertise, eco-conscious practices, and genuine care to every job — with scheduled, efficient service that meets your expectations every time.
                 </p>
+                <div style={{ marginTop: '1.5rem' }}>
+                  <a
+                    href="tel:7809893987"
+                    style={{
+                      display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                      background: 'var(--color-primary)', color: '#fff',
+                      padding: '0.6rem 1.5rem', borderRadius: '2rem',
+                      fontWeight: 700, textDecoration: 'none', fontSize: '0.95rem',
+                    }}
+                  >
+                    Call 780-989-3987
+                  </a>
+                </div>
               </ScrollReveal>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaLeaf, FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaFacebook, FaInstagram, FaGoogle } from 'react-icons/fa'
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaFacebook, FaInstagram, FaGoogle } from 'react-icons/fa'
 
 const SERVICE_LINKS = [
   'Lawn Mowing & Maintenance',
@@ -21,15 +21,36 @@ const PAGE_LINKS = [
 export default function Footer() {
   return (
     <footer className="footer">
+      {/* CTA Band */}
+      <div className="footer-cta-band">
+        <div className="container-xl d-flex align-items-center justify-content-between flex-wrap gap-3">
+          <div>
+            <h3 className="footer-cta-title">Ready for a Perfect Lawn?</h3>
+            <p className="footer-cta-sub mb-0">
+              Join 100+ happy clients who trust Capital Lawn Care every season.
+            </p>
+          </div>
+          <a
+            href="tel:7809893987"
+            className="btn btn-lg d-inline-flex align-items-center gap-2"
+            style={{ background: 'var(--color-accent)', color: '#1a1a1a', fontWeight: 700, borderRadius: '2rem', padding: '0.6rem 1.6rem' }}
+          >
+            <FaPhone size={14} /> Call 780-989-3987
+          </a>
+        </div>
+      </div>
+
       <div className="container-xl">
         <div className="row g-5">
           {/* Col 1: Brand */}
           <div className="col-lg-3 col-md-6">
-            <Link to="/" className="footer-brand">
-              <FaLeaf style={{ marginRight: 6 }} />CI<span>Lawn</span>
+            <Link to="/" className="footer-brand d-flex align-items-center gap-2">
+              <img src="/images/logo3.PNG" alt="Capital Lawn Care" style={{ height: 36, width: 'auto', objectFit: 'contain' }} />
+              <span>Capital <span>Lawn Care</span></span>
             </Link>
             <p className="footer-tagline">
-              Edmonton's trusted lawn care experts. Professional, reliable, and eco-friendly services for residential and commercial properties.
+              Professional lawn care services that keep your outdoor spaces beautiful,
+              healthy, and thriving — all year long.
             </p>
             <div className="social-icons">
               <a href="#" className="social-icon" aria-label="Facebook"><FaFacebook /></a>
@@ -63,30 +84,40 @@ export default function Footer() {
             <h6 className="footer-heading">Contact Us</h6>
             <div className="footer-contact-item">
               <FaPhone />
-              <span>(780) 000-0000</span>
+              <a href="tel:7809893987" style={{ color: 'inherit', textDecoration: 'none' }}>780-989-3987</a>
             </div>
             <div className="footer-contact-item">
               <FaEnvelope />
-              <span>info@cilawn.ca</span>
+              <a href="mailto:lawncare@capitalirrigation.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+                lawncare@capitalirrigation.com
+              </a>
             </div>
             <div className="footer-contact-item">
               <FaMapMarkerAlt />
-              <span>Edmonton, Alberta, Canada</span>
+              <span>4505 97 St NW, Edmonton, AB T6E 5Y8</span>
             </div>
             <div className="footer-contact-item">
               <FaClock />
-              <div>
-                <div>Mon–Fri: 7:00 AM – 7:00 PM</div>
-                <div>Sat: 8:00 AM – 5:00 PM</div>
-                <div>Sun: Closed</div>
-              </div>
+              <span>Monday – Friday: 9am – 4pm</span>
+            </div>
+
+            {/* Pay invoice link */}
+            <div style={{ marginTop: '1rem' }}>
+              <a
+                href="https://capitalirrigation.com/payment/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'var(--color-accent)', fontWeight: 600, fontSize: '0.9rem' }}
+              >
+                Pay Invoice Online &rarr;
+              </a>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-2">
-          <span>© {new Date().getFullYear()} CI Lawn. All Rights Reserved.</span>
+          <span>© {new Date().getFullYear()} Capital Lawn Care. All Rights Reserved.</span>
           <span>
             <a href="#" style={{ color: 'inherit' }}>Privacy Policy</a>
             {' · '}

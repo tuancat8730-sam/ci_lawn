@@ -3,6 +3,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  padding-top: 7rem; /* account for topbar (32px) + navbar (~80px) */
   background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80');
   background-size: cover;
   background-position: center;

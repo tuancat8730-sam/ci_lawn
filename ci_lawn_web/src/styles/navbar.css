@@ -1,3 +1,34 @@
+/* Top bar */
+.navbar-topbar {
+  background-color: var(--color-primary-dark);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1031;
+}
+
+.navbar-topbar-link {
+  color: var(--color-accent);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 0.25rem;
+  transition: color var(--transition-base);
+}
+
+.navbar-topbar-link:hover {
+  color: #fff;
+}
+
+.navbar-cilawn {
+  top: 32px !important;
+}
+
 .navbar-cilawn {
   padding: 1rem 0;
   transition: background-color var(--transition-base), padding var(--transition-base), box-shadow var(--transition-base);
