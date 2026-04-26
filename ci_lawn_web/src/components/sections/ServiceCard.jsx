@@ -29,7 +29,10 @@ export default function ServiceCard({ service }) {
           {!service.image && service.badge && (
             <span className="service-badge">{service.badge}</span>
           )}
-          <div className="service-icon-circle">
+          <div
+            className="service-icon-circle"
+            style={service.iconColor ? { background: service.iconColor } : undefined}
+          >
             {icon}
           </div>
           <h5 className="card-title">{service.title}</h5>

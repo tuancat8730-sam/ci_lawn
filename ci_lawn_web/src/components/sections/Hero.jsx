@@ -15,20 +15,20 @@ export default function Hero() {
     <section className="hero-section">
       <div className="hero-overlay" />
 
-      <div className="container-xl hero-content">
-        <div className="row">
-          <div className="col-lg-8">
+      <div className="container-xl hero-content text-center">
+        <div className="row justify-content-center">
+          <div className="col-12">
             <h1 className="hero-title text-white">
               Professional Lawn Care{' '}
               <span style={{ color: '#8BC34A' }}>You Can Trust</span>
             </h1>
-            <p className="hero-subtitle">
+            <p className="hero-subtitle mx-auto">
               Capital Lawn Care is a full-service lawn care company serving the Edmonton area since 2020.
               Scheduled and efficient service, working to meet customer expectations.
               We have employees who care and customers who are satisfied.
             </p>
 
-            <div className="hero-cta-group">
+            <div className="hero-cta-group justify-content-center">
               <button className="btn-hero-primary" onClick={scrollToContact}>
                 Book Free Estimate <FaArrowRight />
               </button>
@@ -37,7 +37,7 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="hero-trust-row">
+            <div className="hero-trust-row justify-content-center">
               {STATS.map((s) => (
                 <div className="trust-badge" key={s.label}>
                   <span className="trust-icon">{s.icon}</span>

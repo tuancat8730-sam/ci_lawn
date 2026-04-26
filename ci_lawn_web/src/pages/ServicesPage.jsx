@@ -33,7 +33,10 @@ export default function ServicesPage() {
             <ScrollReveal key={s.id}>
               <div className={`row align-items-center g-4 g-lg-5 mb-5 pb-5 service-detail-row ${i % 2 !== 0 ? 'service-detail-row--reverse' : ''} ${i < SERVICES.length - 1 ? 'border-bottom' : ''}`}>
                 <div className="col-lg-6 service-detail-text">
-                  <div className="service-icon-circle mb-3">{ICONS[s.id]}</div>
+                  <div
+                    className="service-icon-circle mb-3"
+                    style={s.iconColor ? { background: s.iconColor } : undefined}
+                  >{ICONS[s.id]}</div>
                   {s.badge && <span className="service-badge mb-2">{s.badge}</span>}
                   <h2 className="fw-bold mb-3" style={{ color: 'var(--color-dark-text)' }}>{s.title}</h2>
                   <p style={{ color: 'var(--color-gray-text)', lineHeight: 1.7 }}>{s.shortDesc}</p>

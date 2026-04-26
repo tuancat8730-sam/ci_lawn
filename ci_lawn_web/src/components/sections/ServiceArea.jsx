@@ -13,8 +13,8 @@ export default function ServiceArea() {
             <ScrollReveal direction="left">
               <SectionHeader
                 label="Service Area"
-                title="Proudly Serving the Greater Edmonton Area"
-                subtitle="We service residential and commercial properties across Edmonton and the surrounding municipalities."
+                title="Proudly Serving the Edmonton Area"
+                subtitle="We service residential and commercial properties across Edmonton and Sherwood Park."
                 center={false}
               />
 

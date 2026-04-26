@@ -1,17 +1,7 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { FaCloudRain, FaBagShopping, FaCreditCard, FaChevronDown } from 'react-icons/fa6'
-import { FaSearchPlus } from 'react-icons/fa'
 import SectionHeader from '../ui/SectionHeader'
 import ScrollReveal from '../ui/ScrollReveal'
-
-const IMAGES = [
-  { src: 'https://images.unsplash.com/photo-1550159930-40066082a4fc?w=600&q=80', alt: 'Freshly mowed lawn', label: 'Lawn Mowing' },
-  { src: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80', alt: 'Hedge trimming service', label: 'Hedge Trimming' },
-  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', alt: 'Beautiful garden lawn', label: 'Full Maintenance' },
-  { src: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80', alt: 'Garden landscaping', label: 'Landscaping' },
-  { src: 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=600&q=80', alt: 'Lawn aeration', label: 'Aeration' },
-  { src: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80', alt: 'Backyard cleanup', label: 'Seasonal Cleanup' },
-]
 
 const FAQS = [
   {
@@ -33,80 +23,12 @@ const FAQS = [
 
 export default function GalleryFAQ() {
   const [openIndex, setOpenIndex] = useState(null)
-  const sliderRef = useRef(null)
-  const [activeSlide, setActiveSlide] = useState(0)
 
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i)
-
-  const handleScroll = () => {
-    const el = sliderRef.current
-    if (!el) return
-    const idx = Math.round(el.scrollLeft / el.clientWidth)
-    setActiveSlide(idx)
-  }
-
-  const goToSlide = (i) => {
-    const el = sliderRef.current
-    if (!el) return
-    el.scrollTo({ left: i * el.clientWidth, behavior: 'smooth' })
-    setActiveSlide(i)
-  }
 
   return (
     <section className="section-gallery-faq">
       <div className="container-xl">
-
-        {/* Gallery */}
-        <ScrollReveal>
-          <SectionHeader
-            label="Our Work"
-            title="Recent Projects"
-            subtitle="A glimpse at the transformations we create for our clients every day."
-          />
-        </ScrollReveal>
-
-        {/* Desktop: grid */}
-        <div className="gallery-grid mb-5 d-none d-md-grid">
-          {IMAGES.map((img, i) => (
-            <ScrollReveal key={i} delay={Math.min(i + 1, 5)}>
-              <div className="gallery-item">
-                <img src={img.src} alt={img.alt} />
-                <div className="gallery-item-overlay">
-                  <div className="d-flex align-items-center gap-2 gallery-item-label">
-                    <FaSearchPlus size={14} />
-                    {img.label}
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-
-        {/* Mobile: slider */}
-        <div className="gallery-slider-wrap d-md-none mb-5">
-          <div className="gallery-slider" ref={sliderRef} onScroll={handleScroll}>
-            {IMAGES.map((img, i) => (
-              <div className="gallery-slide" key={i}>
-                <img src={img.src} alt={img.alt} />
-                <div className="gallery-slide-label">
-                  <FaSearchPlus size={13} />
-                  <span>{img.label}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="pricing-dots">
-            {IMAGES.map((_, i) => (
-              <button
-                key={i}
-                className={`pricing-dot${i === activeSlide ? ' pricing-dot--active' : ''}`}
-                onClick={() => goToSlide(i)}
-                aria-label={`Go to image ${i + 1}`}
-              />
-            ))}
-          </div>
-        </div>
 
         {/* FAQ */}
         <ScrollReveal>

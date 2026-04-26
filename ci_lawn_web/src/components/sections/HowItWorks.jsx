@@ -35,14 +35,14 @@ export default function HowItWorks() {
           />
         </ScrollReveal>
 
-        <div className="row g-4 position-relative">
+        <div className="row g-4 position-relative align-items-stretch">
           {/* Connector line (desktop) */}
           <div className="how-connector d-none d-lg-block" />
 
           {STEPS.map((step, i) => (
-            <div className="col-lg-4" key={step.num}>
-              <ScrollReveal delay={i + 1}>
-                <div className="how-step-card text-center">
+            <div className="col-lg-4 d-flex" key={step.num}>
+              <ScrollReveal delay={i + 1} className="h-100 w-100">
+                <div className="how-step-card text-center h-100">
                   <div className="how-step-num">{step.num}</div>
                   <div className="how-step-icon">{step.icon}</div>
                   <h4 className="how-step-title">{step.title}</h4>
