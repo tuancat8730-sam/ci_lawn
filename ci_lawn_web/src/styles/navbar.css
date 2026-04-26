@@ -1,16 +1,26 @@
-/* Top bar */
-.navbar-topbar {
-  background-color: var(--color-primary-dark);
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 0.82rem;
-  font-weight: 500;
-  padding: 0.4rem 0;
-  text-align: center;
+/* Navbar wrapper — single fixed container, no gap */
+.navbar-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1031;
+  background-color: #0F5C2A;
+  transition: background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.navbar-wrapper.scrolled {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+}
+
+/* Top bar */
+.navbar-topbar {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  text-align: center;
 }
 
 .navbar-topbar-link {
@@ -26,19 +36,12 @@
 }
 
 .navbar-cilawn {
-  top: 32px !important;
+  padding: 0.75rem 0;
+  transition: padding var(--transition-base);
 }
 
-.navbar-cilawn {
-  padding: 1rem 0;
-  transition: background-color var(--transition-base), padding var(--transition-base), box-shadow var(--transition-base);
-  background-color: transparent;
-}
-
-.navbar-cilawn.scrolled {
-  background-color: var(--color-primary-dark) !important;
-  padding: 0.6rem 0;
-  box-shadow: var(--shadow-md);
+.navbar-wrapper.scrolled .navbar-cilawn {
+  padding: 0.5rem 0;
 }
 
 .navbar-cilawn .navbar-brand {

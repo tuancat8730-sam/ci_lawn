@@ -27,7 +27,7 @@ export default function Navbar() {
   }
 
   return (
-    <>
+    <div className={`navbar-wrapper${scrolled ? ' scrolled' : ''}`}>
       {/* Top bar */}
       <div className="navbar-topbar">
         <div className="container-xl d-flex align-items-center justify-content-center gap-2">
@@ -44,12 +44,12 @@ export default function Navbar() {
         </div>
       </div>
 
-      <nav className={`navbar navbar-expand-lg fixed-top navbar-cilawn${scrolled ? ' scrolled' : ''}`}>
+      <nav className={`navbar navbar-expand-lg navbar-cilawn`}>
         <div className="container-xl">
           {/* Brand */}
           <Link to="/" className="navbar-brand d-flex align-items-center gap-2">
             <img
-              src="./images/logo3.png"
+              src="./images/logo4.png"
               alt="Capital Lawn Care"
               style={{ height: 36, width: 'auto', objectFit: 'contain' }}
             />
@@ -97,6 +97,6 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   )
 }

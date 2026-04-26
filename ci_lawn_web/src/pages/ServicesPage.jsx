@@ -14,9 +14,9 @@ const ICONS = {
 
 export default function ServicesPage() {
   return (
-    <main style={{ paddingTop: '7.5rem' }}>
+    <main>
       {/* Header */}
-      <section style={{ background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))', padding: '5rem 0' }}>
+      <section style={{ background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))', paddingTop: 'calc(7.5rem + 5rem)', paddingBottom: '5rem' }}>
         <div className="container-xl text-center text-white">
           <span className="section-label" style={{ color: 'var(--color-accent)' }}>What We Do</span>
           <h1 className="display-5 fw-bold">Our Lawn Care Services</h1>
