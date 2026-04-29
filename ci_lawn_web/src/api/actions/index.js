@@ -5,7 +5,7 @@ import { ActionType } from '../action_types/form'
 // Vite exposes env vars via import.meta.env.VITE_*
 const form_key = import.meta.env.VITE_FORM_KEY ?? ''
 
-const SUBMIT_URL = `https://api.capitalirrigation.com/api/snow_submit_form/?${form_key}`
+const SUBMIT_URL = `https://api.capitalirrigation.com/api/submit-quote-form/?${form_key}`
 
 /**
  * Submit the contact/quote form to the Capital Irrigation API.

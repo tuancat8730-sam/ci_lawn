@@ -80,16 +80,26 @@ export default function ContactForm() {
       return
     }
 
-    // Map form fields → ci_snow FormFields schema
+    // Map form fields → submit-quote-form API schema
     const payload = {
-      name: `${form.firstName} ${form.lastName}`.trim(),
-      email: form.email,
-      phone: form.cellPhone || form.workPhone || form.homePhone,
-      address: [form.address, form.city].filter(Boolean).join(', '),
+      subject: 'New Quote request from the Lawn Website',
+      first_name: form.firstName,
+      last_name: form.lastName,
+      address: form.address,
+      city: form.city,
       postal: form.postal,
-      contact_type: form.contactType,
-      how_hear: form.howHear.length > 0 ? form.howHear.join(', ') : '',
-      request_description: form.comments,
+      cell_phone: form.cellPhone,
+      work_phone: form.workPhone,
+      home_phone: form.homePhone,
+      contact_method: form.contactType === 'Email' ? 'E' : 'P',
+      email: form.email,
+      web_search: form.howHear.includes('Web Search'),
+      referral: form.howHear.includes('Referral'),
+      yellow_pages: form.howHear.includes('Yellow Pages'),
+      online_ad: form.howHear.includes('Online Ad'),
+      superbowl: form.howHear.includes('Superbowl Commercial'),
+      other: form.howHear.includes('Other'),
+      comments: form.comments,
     }
 
     submitForm(payload)

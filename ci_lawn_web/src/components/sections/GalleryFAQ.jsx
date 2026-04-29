@@ -18,6 +18,7 @@ const FAQS = [
     icon: <FaCreditCard />,
     q: 'How do I pay my invoice?',
     a: 'We will email your invoice, which will include payment options. We accept e-transfer, cheque, or credit card payment through our website or over the phone.',
+    link: { text: 'Use this portal', href: 'https://capitalirrigation.com/payment/' },
   },
 ]
 
@@ -53,7 +54,12 @@ export default function GalleryFAQ() {
                   <FaChevronDown className="faq-chevron" />
                 </button>
                 <div className="faq-answer">
-                  <p>{faq.a}</p>
+                  <p>
+                    {faq.a}
+                    {faq.link && (
+                      <> <a href={faq.link.href} target="_blank" rel="noopener noreferrer">{faq.link.text}</a>.</>
+                    )}
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
