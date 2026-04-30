@@ -42,9 +42,19 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({})
   const { submitting, submitComplete, error, submitForm } = useFormSubmit()
 
+  const formatPhone = (value) => {
+    const digits = value.replace(/\D/g, '').slice(0, 10)
+    if (digits.length <= 3) return digits
+    if (digits.length <= 6) return `${digits.slice(0, 3)}-${digits.slice(3)}`
+    return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`
+  }
+
+  const PHONE_FIELDS = ['cellPhone', 'workPhone', 'homePhone']
+
   const handleChange = (e) => {
     const { name, value } = e.target
-    setForm((prev) => ({ ...prev, [name]: value }))
+    const formatted = PHONE_FIELDS.includes(name) ? formatPhone(value) : value
+    setForm((prev) => ({ ...prev, [name]: formatted }))
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }))
   }
 
@@ -234,7 +244,7 @@ export default function ContactForm() {
                         <input
                           type="tel" name="cellPhone"
                           className={`form-control${errors.cellPhone ? ' is-invalid' : ''}`}
-                          placeholder="(780) 000-0000" value={form.cellPhone} onChange={handleChange}
+                          placeholder="780-000-0000" value={form.cellPhone} onChange={handleChange}
                         />
                         {errors.cellPhone && <div className="invalid-feedback">{errors.cellPhone}</div>}
                       </div>
@@ -242,7 +252,7 @@ export default function ContactForm() {
                         <label className="form-label">Work Phone</label>
                         <input
                           type="tel" name="workPhone" className="form-control"
-                          placeholder="(780) 000-0000" value={form.workPhone} onChange={handleChange}
+                          placeholder="780-000-0000" value={form.workPhone} onChange={handleChange}
                         />
                       </div>
 
@@ -251,7 +261,7 @@ export default function ContactForm() {
                         <label className="form-label">Home Phone</label>
                         <input
                           type="tel" name="homePhone" className="form-control"
-                          placeholder="(780) 000-0000" value={form.homePhone} onChange={handleChange}
+                          placeholder="780-000-0000" value={form.homePhone} onChange={handleChange}
                         />
                       </div>
                       <div className="col-md-8">

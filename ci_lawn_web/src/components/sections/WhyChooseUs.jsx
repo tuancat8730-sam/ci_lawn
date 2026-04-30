@@ -1,4 +1,4 @@
-import { FaShieldAlt, FaUsers, FaLeaf, FaCalendarAlt, FaThumbsUp } from 'react-icons/fa'
+import { FaShieldAlt, FaUsers, FaCalendarAlt, FaThumbsUp } from 'react-icons/fa'
 import SectionHeader from '../ui/SectionHeader'
 import ScrollReveal from '../ui/ScrollReveal'
 
@@ -12,11 +12,6 @@ const BENEFITS = [
     icon: <FaUsers />,
     title: 'Consistent Crews',
     desc: 'The same experienced team services your property every time — they learn your lawn.',
-  },
-  {
-    icon: <FaLeaf />,
-    title: 'Eco-Friendly Products',
-    desc: 'Pet and child-safe treatments. We use environmentally responsible products wherever possible.',
   },
   {
     icon: <FaCalendarAlt />,

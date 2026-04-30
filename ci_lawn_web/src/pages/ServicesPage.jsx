@@ -21,7 +21,7 @@ export default function ServicesPage() {
           <span className="section-label" style={{ color: 'var(--color-accent)' }}>What We Do</span>
           <h1 className="display-5 fw-bold">Our Lawn Care Services</h1>
           <p className="lead" style={{ color: 'rgba(255,255,255,0.8)', maxWidth: 560, margin: '0 auto' }}>
-            Professional, eco-friendly lawn care solutions for Edmonton homeowners and businesses.
+            Professional lawn care solutions servicing the Edmonton area.
           </p>
         </div>
       </section>

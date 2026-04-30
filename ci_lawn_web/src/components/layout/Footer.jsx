@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="footer-cta-band">
         <div className="container-xl d-flex align-items-center justify-content-between flex-wrap gap-3">
           <div>
-            <h3 className="footer-cta-title">Ready for a Perfect Lawn?</h3>
+            <h3 className="footer-cta-title">Ready for a manicured lawn?</h3>
             <p className="footer-cta-sub mb-0">
               Join 100+ happy clients who trust Capital Lawn Care every season.
             </p>
