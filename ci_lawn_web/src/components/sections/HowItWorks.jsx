@@ -18,7 +18,7 @@ const STEPS = [
   {
     num: '03',
     icon: <FaSmile />,
-    title: 'Enjoy Your Perfect Lawn',
+    title: 'Enjoy Your Manicured Lawn',
     desc: 'Sit back and relax while our certified crew transforms your lawn. We clean up completely before we leave.',
   },
 ]
@@ -36,8 +36,6 @@ export default function HowItWorks() {
         </ScrollReveal>
 
         <div className="row g-4 position-relative align-items-stretch">
-          {/* Connector line (desktop) */}
-          <div className="how-connector d-none d-lg-block" />
 
           {STEPS.map((step, i) => (
             <div className="col-lg-4 d-flex" key={step.num}>
