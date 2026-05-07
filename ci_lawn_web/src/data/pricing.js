@@ -2,8 +2,8 @@ export const PRICING_TIERS = [
   {
     id: 'spring-cleanup',
     name: 'Spring Clean Up',
-    price: '$225',
-    priceNote: 'month',
+    price: '$245',
+    priceNote: null,
     originalPrice: null,
     isHighlighted: false,
     features: [
@@ -20,7 +20,7 @@ export const PRICING_TIERS = [
   {
     id: 'lawn-maintenance',
     name: 'Regular Lawn Maintenance',
-    price: '$225',
+    price: '$220',
     priceNote: 'month',
     originalPrice: null,
     isHighlighted: true,

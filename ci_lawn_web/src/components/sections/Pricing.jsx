@@ -22,10 +22,7 @@ function PricingCard({ tier }) {
         {tier.price}
         {tier.priceNote && <span>/{tier.priceNote}</span>}
       </div>
-      {tier.priceNote
-        ? <p className="pricing-note">Starting at</p>
-        : <p className="pricing-note">No hidden fees</p>
-      }
+      <p className="pricing-note">Average sized yard</p>
 
       <ul className="pricing-features">
         {tier.features.map((f) => (
@@ -70,7 +67,7 @@ export default function Pricing() {
         <ScrollReveal>
           <SectionHeader
             label="Transparent Pricing"
-            title="Simple, Honest Packages"
+            title="Simple, Straight Forward Packages"
             subtitle="No hidden fees. No surprise charges. Just great lawn care at fair prices."
           />
         </ScrollReveal>

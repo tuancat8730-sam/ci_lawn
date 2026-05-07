@@ -32,7 +32,7 @@ const EMPTY_FORM = {
   workPhone: '',
   homePhone: '',
   email: '',
-  contactType: 'Phone',
+  contactType: 'Email',
   howHear: [],
   comments: '',
 }
@@ -244,7 +244,7 @@ export default function ContactForm() {
                         <input
                           type="tel" name="cellPhone"
                           className={`form-control${errors.cellPhone ? ' is-invalid' : ''}`}
-                          placeholder="780-000-0000" value={form.cellPhone} onChange={handleChange}
+                          placeholder="XXX-XXX-XXXX" value={form.cellPhone} onChange={handleChange}
                         />
                         {errors.cellPhone && <div className="invalid-feedback">{errors.cellPhone}</div>}
                       </div>
@@ -252,7 +252,7 @@ export default function ContactForm() {
                         <label className="form-label">Work Phone</label>
                         <input
                           type="tel" name="workPhone" className="form-control"
-                          placeholder="780-000-0000" value={form.workPhone} onChange={handleChange}
+                          placeholder="XXX-XXX-XXXX" value={form.workPhone} onChange={handleChange}
                         />
                       </div>
 
@@ -261,7 +261,7 @@ export default function ContactForm() {
                         <label className="form-label">Home Phone</label>
                         <input
                           type="tel" name="homePhone" className="form-control"
-                          placeholder="780-000-0000" value={form.homePhone} onChange={handleChange}
+                          placeholder="XXX-XXX-XXXX" value={form.homePhone} onChange={handleChange}
                         />
                       </div>
                       <div className="col-md-8">
